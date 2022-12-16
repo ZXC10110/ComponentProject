@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-CovidCaseRound1To2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CovidCaseRound1To2"/>
+        <property name="wsdl-CovidCaseRound1To2" location="xml-resources/web-service-references/CovidCaseRound1To2/wsdl/localhost_8080/CovidCaseRound1To2/CovidCaseRound1To2.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CovidCaseRound1To2" destdir="${build.generated.dir}/jax-wsCache/CovidCaseRound1To2" wsdl="${wsdl-CovidCaseRound1To2}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CovidCaseRound1To2/CovidCaseRound1To2?WSDL" xnocompile="true" xendorsed="true" package="services">
+            <depends file="${wsdl-CovidCaseRound1To2}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CovidCaseRound1To2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CovidCaseRound1To2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CovidCaseRound1To2" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CovidCaseRound1To2"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-CovidCaseRound1To2"/>
+</project>
